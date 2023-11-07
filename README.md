@@ -8,7 +8,8 @@ This is a flutter app in which i have make a BMI Calculator App with the hekp of
 
 ## Screenshots
 
-![App Screenshot](https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgofXnj3h1-dGdqSKToVMz4lbAx9KjsK8A9_Zr9Zt3i7BGYsg5JB6gNSRDlrxNNsHCqRUEk1jFDVVdRelaeoZofbhJ4JHt3UBnknIe214khxgXkfNjT377f1BoZI1rCVJmhYP1UgtBJIf8olh4v9vub0q7-mEuNZLeKUWHPqQzp9bdTovfEXmioRiVq_S7Z/s10278/BMI.png)
+![Group 1](https://github.com/itsmohsin/bmi_calculator/assets/32964161/050d748d-a064-4109-a78e-6fa5ccb424ae)
+
 
 
 ## Tech Stack
