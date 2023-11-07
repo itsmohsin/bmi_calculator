@@ -1,6 +1,6 @@
 
 # 📙 BMI Calculator Flutter app 
-This is a flutter app in which i have make a BMI Calculator App with the hekp of flutter and getx 
+This is a flutter app in which i have make a BMI Calculator App with the help of flutter and getx 
     
 
 
