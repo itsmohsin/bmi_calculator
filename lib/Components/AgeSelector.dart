@@ -1,11 +1,15 @@
 import 'package:bmi_calculator/Components/SecondaryButton.dart';
+import 'package:bmi_calculator/Controller/BmiController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AgeSelector extends StatelessWidget {
   const AgeSelector({super.key});
 
   @override
   Widget build(BuildContext context) {
+    BMIController bmiController = Get.put(BMIController());
+
     return Container(
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -30,20 +34,28 @@ class AgeSelector extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "45",
-                style: TextStyle(
-                    fontSize: 70,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onBackground),
-              ),
+              Obx(() => Text(
+                    "${bmiController.age.value}",
+                    style: TextStyle(
+                        fontSize: 70,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.onBackground),
+                  )),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SecondaryButton(onPress: () {}, icon: Icons.add),
-              SecondaryButton(onPress: () {}, icon: Icons.remove),
+              SecondaryButton(
+                  onPress: () {
+                    bmiController.age.value++;
+                  },
+                  icon: Icons.add),
+              SecondaryButton(
+                  onPress: () {
+                    bmiController.age.value--;
+                  },
+                  icon: Icons.remove),
             ],
           )
         ],

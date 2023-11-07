@@ -1,11 +1,14 @@
 import 'package:bmi_calculator/Components/SecondaryButton.dart';
+import 'package:bmi_calculator/Controller/BmiController.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class WeightSelector extends StatelessWidget {
   const WeightSelector({super.key});
 
   @override
   Widget build(BuildContext context) {
+    BMIController bmiController = Get.put(BMIController());
     return Container(
       padding: EdgeInsets.all(10),
       decoration: BoxDecoration(
@@ -30,20 +33,28 @@ class WeightSelector extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "45",
-                style: TextStyle(
-                    fontSize: 70,
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onBackground),
-              ),
+              Obx(() => Text(
+                    "${bmiController.weight.value}",
+                    style: TextStyle(
+                        fontSize: 70,
+                        fontWeight: FontWeight.bold,
+                        color: Theme.of(context).colorScheme.onBackground),
+                  )),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              SecondaryButton(onPress: () {}, icon: Icons.add),
-              SecondaryButton(onPress: () {}, icon: Icons.remove),
+              SecondaryButton(
+                  onPress: () {
+                    bmiController.weight.value++;
+                  },
+                  icon: Icons.add),
+              SecondaryButton(
+                  onPress: () {
+                    bmiController.weight.value--;
+                  },
+                  icon: Icons.remove),
             ],
           )
         ],
